@@ -8,8 +8,6 @@
 [![Express](https://img.shields.io/badge/Express-4.18.2-black?logo=express)](https://expressjs.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)](https://www.postgresql.org/)
 [![Axios](https://img.shields.io/badge/Axios-1.12.2-red?logo=axios)](https://axios-http.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
-[![CI](https://img.shields.io/badge/GitHub%20Actions-CI-blue?logo=github)](https://github.com/)
 
 ## 🔹 Descripción
 
