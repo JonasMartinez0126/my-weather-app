@@ -1,5 +1,5 @@
-import express from 'express' // Importa Express para crear el router
-import axios from 'axios' // Importa Axios para realizar peticiones HTTP
+import * as express from 'express' // Importa Express para crear el router
+const axios = require('axios') // Importa Axios para realizar peticiones HTTP
 import { saveSearch } from '../db' // Importa función para guardar búsquedas
 
 // Crea nueva instancia del router
@@ -13,7 +13,9 @@ const router = express.Router()
 router.get('/:city', async (req, res) => {
   const city = req.params.city as string;
   // Valida que se haya proporcionado una ciudad
-  if (!city) return res.status(400).json({ error: 'Debe especificar una ciudad' })
+  if (!city) {
+    return res.status(400).json({ error: 'Debe especificar una ciudad' });
+  }
 
   try {
     // Obtiene API key desde variables de entorno
@@ -37,10 +39,10 @@ router.get('/:city', async (req, res) => {
     // Guarda la búsqueda en la base de datos
     await saveSearch({ city: weather.city, lat: weather.lat, lon: weather.lon, temp: weather.temp, payload: data })
     // Envía respuesta con datos del clima
-    res.json(weather)
+    return res.json(weather)
   } catch (err) {
     // Manejo de errores con mensaje descriptivo
-    res.status(500).json({ error: 'Error al consultar OpenWeather', details: err })
+    return res.status(500).json({ error: 'Error al consultar OpenWeather', details: err })
   }
 })
 

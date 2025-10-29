@@ -1,7 +1,7 @@
 import express from 'express' // Framework web para Node.js
 import cors from 'cors' // Middleware para habilitar CORS
 import dotenv from 'dotenv' // Para cargar variables de entorno
-import routes from "./routes" // Importa todas las rutas de la aplicación
+import routes from "./routes/index" // Importa todas las rutas de la aplicación
 import { initDb } from './db' // Función para inicializar la base de datos
 
 // Carga las variables de entorno del archivo .env
