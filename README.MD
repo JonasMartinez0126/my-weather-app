@@ -154,7 +154,7 @@ App disponible en `http://localhost:5173`.
        |
        v
  [WeatherCard] muestra clima
- [HistoryList] muestra historial (GET /history)
+ [History] muestra historial (GET /history)
 ```
 
 </details>
@@ -171,5 +171,3 @@ App disponible en `http://localhost:5173`.
 </details>
 
 ---
-
-<details>
