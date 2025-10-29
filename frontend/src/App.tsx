@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"; // Componentes de React Router
+import Home from "./pages/Home"; // Página principal
+import History from "./pages/History"; // Página de historial
 
-function App() {
-  const [count, setCount] = useState(0)
-
+/**
+ * Componente principal de la aplicación
+ * Configura el enrutamiento y la navegación
+ */
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <BrowserRouter>
+      {/* Barra de navegación */}
+      <nav className="bg-emerald-700 text-white py-4 shadow-md">
+        <div className="container mx-auto flex justify-between items-center px-4">
+          {/* Logo/Título de la app */}
+          <h1 className="font-bold text-xl">MyWeatherApp</h1>
+          {/* Links de navegación */}
+          <div className="space-x-4">
+            <Link to="/" className="hover:underline">Inicio</Link>
+            <Link to="/history" className="hover:underline">Historial</Link>
+          </div>
+        </div>
+      </nav>
 
-export default App
+      {/* Configuración de rutas */}
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Ruta principal */}
+        <Route path="/history" element={<History />} /> {/* Ruta del historial */}
+      </Routes>
+    </BrowserRouter>
+  );
+}
